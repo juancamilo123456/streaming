@@ -121,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'C:/Users/57305/OneDrive/Escritorio/ProyectosPython/proyecto/Proyecto_Django_parcial/static'
+
 
 
 # Default primary key field type
