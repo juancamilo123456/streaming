@@ -120,8 +120,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = '/home/juankamilo123/juankamilo123.pythonanywhere.com/static/'
+import os
+
+# Define la ruta base de tu proyecto
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Configuración del directorio de archivos estáticos
+STATIC_URL = '/static/'
+
+# Directorio donde se almacenarán los archivos estáticos recopilados en tu entorno local
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 
 
