@@ -122,7 +122,14 @@ USE_TZ = True
 
 
 # Configuración del directorio de archivos estáticos
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 
 
