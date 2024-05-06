@@ -38,7 +38,7 @@ https://templatemo.com/tm-559-Cuentasplus+-shop
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:320-738-93934">320-738-93934</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.facebook.com/profile.php?id=100091775572993&locale=es_LA" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
@@ -88,13 +88,49 @@ https://templatemo.com/tm-559-Cuentasplus+-shop
                         </div>
                     </div>
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                        <i class="fa fa-fw fa-search text-dark mr-2" id="search-icon"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="templatemo_search" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Buscar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2" id="search-input">
+                              <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="search()">Buscar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <script>
+                      // Función para abrir el modal al hacer clic en el ícono de búsqueda
+                      document.getElementById('search-icon').addEventListener('click', function() {
+                        $('#templatemo_search').modal('show');
+                      });
+                    
+                      // Función para realizar la búsqueda y redirigir a shop.html
+                      function search() {
+                        var searchTerm = document.getElementById('search-input').value.trim();
+                        if (searchTerm !== '') {
+                          // Redirigir a shop.html con el término de búsqueda como parámetro
+                          window.location.href = 'shop-single.html?search=' + encodeURIComponent(searchTerm);
+                        }
+                      }
+                    </script>
+                    
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="contact.html">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="contact.html">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                     </a>
@@ -159,11 +195,10 @@ https://templatemo.com/tm-559-Cuentasplus+-shop
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Proident occaecat</h1>
-                                <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                <h1 class="h1">trabaja con CPlus+</h1>
+                                <h3 class="h2">La mejor empresa de streaming a nivel mundial.</h3>
                                 <p>
-                                    You are permitted to use this Zay CSS template for your commercial websites. 
-                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                   Vende cuentas streaming con nosotros de la manera mas efectiva, cuentas con la ayuda de CPlus+ para adquirir cuentas con nuestros  proveedores de primera y asi acceder a nuestra plataforma de ventas, invierte en esta industria de las cuentas de entretenimientos sin cuota inicial, genera ingresos ahora!.
                                 </p>
                             </div>
                         </div>
@@ -178,11 +213,11 @@ https://templatemo.com/tm-559-Cuentasplus+-shop
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Repr in voluptate</h1>
-                                <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                <h1 class="h1">¿Que ofrecemos?</h1>
+                                <h3 class="h2"> 
+                                    ¡Explora el mundo del entretenimiento sin límites con CPlus+! </h3>
                                 <p>
-                                    We bring you 100% free CSS templates for your websites. 
-                                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                                    ¡Descubre la excelencia en el streaming con CPlus+! Ofrecemos cuentas de streaming 100% garantizadas para plataformas como Netflix, Disney+ y más. Nuestro compromiso con la calidad y la satisfacción del cliente es insuperable. Con un servicio excepcional y atención al cliente dedicada, estamos aquí para asegurarnos de que tu experiencia de streaming sea impecable en todo momento. Confía en CPlus+ para llevar tu entretenimiento a nuevas alturas.
                                 </p>
                             </div>
                         </div>
@@ -224,7 +259,7 @@ https://templatemo.com/tm-559-Cuentasplus+-shop
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="{% static 'img/category_img_03.png' %}" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Retros</h2>
+                <h2 class="h5 text-center mt-3 mb-3">Caricaturas infantiles</h2>
                 <p class="text-center"><a href="shop.html" class="btn btn-success verServiciosBtn">Ver servicios</a></p>
             </div>
         </div>
@@ -439,7 +474,7 @@ https://templatemo.com/tm-559-Cuentasplus+-shop
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2024 CPlus+ 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">Juan camilo castellanos vega</a>
+                            | Designed by <a rel="sponsored" target="_blank">Juan camilo castellanos vega</a>
                         </p>
                     </div>
                 </div>

@@ -40,7 +40,7 @@ https://templatemo.com/tm-559-zay-shop
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:320-738-93934">320-738-93934</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.facebook.com/profile.php?id=100091775572993&locale=es_LA" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
@@ -90,7 +90,43 @@ https://templatemo.com/tm-559-zay-shop
                         </div>
                     </div>
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                        <i class="fa fa-fw fa-search text-dark mr-2" id="search-icon"></i>
+                    </a>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="templatemo_search" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Buscar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2" id="search-input">
+                              <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="search()">Buscar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <script>
+                      // Función para abrir el modal al hacer clic en el ícono de búsqueda
+                      document.getElementById('search-icon').addEventListener('click', function() {
+                        $('#templatemo_search').modal('show');
+                      });
+                    
+                      // Función para realizar la búsqueda y redirigir a shop.html
+                      function search() {
+                        var searchTerm = document.getElementById('search-input').value.trim();
+                        if (searchTerm !== '') {
+                          // Redirigir a shop.html con el término de búsqueda como parámetro
+                          window.location.href = 'shop.html?search=' + encodeURIComponent(searchTerm);
+                        }
+                      }
+                    </script>
+                    
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -134,34 +170,36 @@ https://templatemo.com/tm-559-zay-shop
             </p>
         </div>
     </div>
+    
+  <!-- Start Map -->
+<div id="mapid" style="width: 100%; height: 300px;"></div>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script>
+    var mymap = L.map('mapid').setView([10.3910, -75.4794], 13); // Coordenadas de CPlus+ en Cartagena
 
-    <!-- Start Map -->
-    <div id="mapid" style="width: 100%; height: 300px;"></div>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script>
-        var mymap = L.map('mapid').setView([-23.013104, -43.394365, 13], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoianVhbmNhbHlvdW5vIiwiYSI6ImNrdDgxNjh3cTBhcjcyb2xmcG8wM25yNnEifQ.3SR9cW5b47vZlYL03RzyrA', {
+        maxZoom: 18,
+        attribution: 'Juan Camilo Castellanos Vega | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            attribution: 'Zay Telmplte | Template Design by <a href="https://templatemo.com/">Templatemo</a> | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(mymap);
+    L.marker([10.3910, -75.4794]).addTo(mymap) // Coordenadas de CPlus+ en Cartagena
+        .bindPopup("<b>CPlus+</b> plataforma de streaming<br />Cartagena.").openPopup();
 
-        L.marker([-23.013104, -43.394365, 13]).addTo(mymap)
-            .bindPopup("<b>CPlus+</b> plataforma de streaming<br />Localizacion.").openPopup();
+    mymap.scrollWheelZoom.disable();
+    mymap.touchZoom.disable();
+</script>
+<!-- End Map -->
 
-        mymap.scrollWheelZoom.disable();
-        mymap.touchZoom.disable();
-    </script>
-    <!-- Ena Map -->
+
 <!-- Start Contact -->
 <div class="container py-5">
     <div class="row py-5">
-        <form class="col-md-9 m-auto" method="post" role="form" action="https://api.whatsapp.com/send?phone=573057707816&text=Hola!" onsubmit="return validateForm()">
+        <form class="col-md-9 m-auto" role="form" onsubmit="sendMessage(event)">
             <!-- Aquí van los campos del formulario -->
         
             <div class="row">
@@ -175,12 +213,12 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
             </div>
             <div class="mb-3">
-                <label for="inputsubject">Sujeto</label>
-                <input type="text" class="form-control mt-1" id="Sujeto" name="Sujeto" placeholder="Sujeto" required>
+                <label for="inputsubject">Asunto</label>
+                <input type="text" class="form-control mt-1" id="Asunto" name="Asunto" placeholder="Asunto" required>
             </div>
             <div class="mb-3">
                 <label for="inputmessage">Mensaje</label>
-                <textarea class="form-control mt-1" id="message" name="Mensaje" placeholder="Mensaje" rows="8" required></textarea>
+                <textarea class="form-control mt-1" id="Mensaje" name="Mensaje" placeholder="Mensaje" rows="8" required></textarea>
             </div>
             <div class="row">
                 <div class="col text-end mt-2">
@@ -190,6 +228,22 @@ https://templatemo.com/tm-559-zay-shop
         </form>
     </div>
 </div>
+
+<script>
+    function sendMessage(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe normalmente
+        
+        var nombre = document.getElementById("Nombre").value;
+        var correoElectronico = document.getElementById("CorreoElectronico").value;
+        var asunto = document.getElementById("Asunto").value;
+        var mensaje = document.getElementById("Mensaje").value;
+        
+        var url = "https://api.whatsapp.com/send?phone=573207389394&text=Nombre: " + nombre + "%0ACorreo electrónico: " + correoElectronico + "%0AAsunto: " + asunto + "%0AMensaje: " + mensaje;
+        
+        window.location.href = url; // Redirigir a la URL de WhatsApp
+    }
+</script>
+
 <!-- End Contact -->
 
 <script>
@@ -290,7 +344,7 @@ https://templatemo.com/tm-559-zay-shop
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2024 CPlus+ 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">Juan camilo castellanos vega</a>
+                            | Designed by <a rel="sponsored" target="_blank">Juan camilo castellanos vega</a>
                         </p>
                     </div>
                 </div>

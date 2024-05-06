@@ -37,7 +37,7 @@ https://templatemo.com/tm-559-zay-shop
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:320-738-93934">320-738-93934</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.facebook.com/profile.php?id=100091775572993&locale=es_LA" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
@@ -87,13 +87,49 @@ https://templatemo.com/tm-559-zay-shop
                         </div>
                     </div>
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                        <i class="fa fa-fw fa-search text-dark mr-2" id="search-icon"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="templatemo_search" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Buscar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2" id="search-input">
+                              <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="search()">Buscar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <script>
+                      // Función para abrir el modal al hacer clic en el ícono de búsqueda
+                      document.getElementById('search-icon').addEventListener('click', function() {
+                        $('#templatemo_search').modal('show');
+                      });
+                    
+                      // Función para realizar la búsqueda y redirigir a shop.html
+                      function search() {
+                        var searchTerm = document.getElementById('search-input').value.trim();
+                        if (searchTerm !== '') {
+                          // Redirigir a shop.html con el término de búsqueda como parámetro
+                          window.location.href = 'shop.html?search=' + encodeURIComponent(searchTerm);
+                        }
+                      }
+                    </script>
+                    
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="contact.html">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="contact.html">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                     </a>
@@ -373,7 +409,7 @@ https://templatemo.com/tm-559-zay-shop
                     <div class="col-12">
                         <p class="text-left text-light">
                             Copyright &copy; 2024 CPlus+ 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">Juan camilo castellanos vega</a>
+                            | Designed by <a rel="sponsored" target="_blank">Juan camilo castellanos vega</a>
                         </p>
                     </div>
                 </div>
