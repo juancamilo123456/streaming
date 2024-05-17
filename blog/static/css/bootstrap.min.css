@@ -5783,6 +5783,7 @@ fieldset:disabled .btn {
     width: max-content;
     max-width: 100%;
     pointer-events: none
+    
 }
 
 .toast-container>:not(:last-child) {
@@ -11559,6 +11560,7 @@ fieldset:disabled .btn {
     .d-print-none {
         display: none !important
     }
+    
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
